@@ -35,14 +35,14 @@ var DISABLE_AUTO_FETCH_LOADING_BAR_TIMEOUT = 5000;
 function configure(PDFJS) {
   PDFJS.imageResourcesPath = './images/';
 //#if (FIREFOX || MOZCENTRAL || GENERIC || CHROME)
-//PDFJS.workerSrc = '../build/pdf.worker.js';
+//PDFJS.workerSrc = './build/pdf.worker.js';
 //#endif
 //#if !PRODUCTION
   PDFJS.cMapUrl = '../external/bcmaps/';
   PDFJS.cMapPacked = true;
   PDFJS.workerSrc = '../src/worker_loader.js';
 //#else
-//PDFJS.cMapUrl = '../web/cmaps/';
+//PDFJS.cMapUrl = './web/cmaps/';
 //PDFJS.cMapPacked = true;
 //#endif
 }
