@@ -19,7 +19,7 @@
 ////Note: Keep in sync with extensions/chromium/preferences_schema.json !
 //#endif
 var DEFAULT_PREFERENCES = {
-  showPreviousViewOnLoad: true,
+  showPreviousViewOnLoad: false,
   defaultZoomValue: '',
   sidebarViewOnLoad: 0,
   enableHandToolOnLoad: false,
