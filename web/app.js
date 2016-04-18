@@ -100,7 +100,7 @@ var PDFViewerApplication = {
   animationStartedPromise: null,
   preferenceSidebarViewOnLoad: SidebarView.NONE,
   preferencePdfBugEnabled: false,
-  preferenceShowPreviousViewOnLoad: true,
+  preferenceShowPreviousViewOnLoad: false,
   preferenceDefaultZoomValue: '',
   isViewerEmbedded: (window.parent !== window),
   url: '',
