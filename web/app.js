@@ -1480,27 +1480,8 @@ function webViewerInitialized() {
     // cannot load file:-URLs in a Web Worker. file:-URLs are usually loaded
     // very quickly, so there is no need to set up progress event listeners.
     PDFViewerApplication.setTitleUsingUrl(file);
-    var xhr = new XMLHttpRequest();
     
-    xhr.onload = function() {
-      PDFViewerApplication.open(new Uint8Array(xhr.response));
-    };
-    
-    xhr.onprogress = function(e) {
-      if(e.lengthComputable) {
-        PDFViewerApplication.progress(e.loaded / e.total);
-      }
-    };
-
-    try {
-      xhr.open('GET', file);
-      xhr.responseType = 'arraybuffer';
-      xhr.setRequestHeader('authorization', params.authorization);
-      xhr.send();
-    } catch (e) {
-      PDFViewerApplication.error(mozL10n.get('loading_error', null,
-        'An error occurred while loading the PDF.'), e);
-    }
+    window.AnnotatePDF.loadFile(params);
     return;
   }
 
